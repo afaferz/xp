@@ -24,19 +24,19 @@ Caso queira visualizar a página na web click [aqui](https://xp-drab.vercel.app/
    
    Por padrão o servidor rodará na porta **3000** mas caso queira rodar em outra porta altere o valor no campo `devServer` em `webpack.config.ts`
    
-	   export  default  function (_env: string, argv: { mode: string }) {
-	    // outras configurações omitidas
-			devServer: {
-				static: {
-					directory:  path.join(__dirname, 'public'),
-				},
-				historyApiFallback:  true,
-				hot:  'only',
-				compress:  true,
-				port:  <porta-desejada-aqui>,
-			},
-			// outras configurações omitidas
-		};
+     export  default  function (_env: string, argv: { mode: string }) {
+        // outras configurações omitidas
+         devServer: {
+            static: {
+              directory:  path.join(__dirname, 'public'),
+            },
+            historyApiFallback:  true,
+            hot:  'only',
+            compress:  true,
+            port:  <porta-desejada-aqui>,
+         },
+        // outras configurações omitidas
+      };
 
 
 
