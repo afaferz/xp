@@ -1,0 +1,23 @@
+{
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    },
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "es5",
+        "module": "ESNext",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["./src/*"]
+        },
+        "typeRoots": ["./node_modules/@types"]
+    },
+    "include": ["src/**/*.ts", "src/**/*.vue", "./tests/**/*"],
+    "exclude": ["node_modules"]
+}

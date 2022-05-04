@@ -1,0 +1,58 @@
+@import "../../../common/styles/_variables.scss";
+@import "../../../common/styles/breakpoints.scss";
+.filter-post__wrapper {
+    background-color: #020202;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    transition: all 0.25s ease-in-out;
+    width: 100%;
+    z-index: 10;
+    @include viewport("laptop") {
+        flex-direction: row;
+    }
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    width: 100%;
+    position: relative;
+    @include viewport("tablet") {
+        width: 250px;
+        margin: 0 1rem;
+        justify-content: flex-end;
+    }
+    label.filter-label {
+        color: $white;
+        font-size: 1rem;
+        margin-bottom: 12px;
+        text-decoration: underline;
+    }
+    input.filter-post__filter-by,
+    select.filter-post__sort-by {
+        // padding-top: 1.45rem;
+        padding-left: 10px;
+        padding-bottom: 4px;
+        border-radius: 0;
+    }
+    .filter-post__filter-by {
+        border-bottom: 4px solid $white;
+        color: $white;
+        border-left: 2px solid white;
+        border-top: transparent;
+        border-right: transparent;
+        background-color: transparent;
+        &:active,
+        &:focus {
+            outline: none;
+            border: transparent;
+            border-bottom: 4px solid $white;
+            border-left: 3px solid $white;
+        }
+    }
+}

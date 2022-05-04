@@ -1,0 +1,126 @@
+@import "../../../../src/common/styles/_variables.scss";
+@import "../../../../src/common/styles/breakpoints.scss";
+.post-card {
+    background-color: $white;
+    border: 4px inset $primary;
+    border-radius: 6px;
+    box-shadow: $shadow;
+    box-sizing: border-box;
+    display: flex;
+    margin: 0.75rem 0;
+    max-height: 325px;
+    max-width: 350px;
+    flex-direction: column;
+    padding: 1rem;
+    @include viewport("desktop") {
+        max-width: 650px;
+    }
+}
+
+.post-card__title {
+    background-color: $primary;
+    border-bottom-right-radius: 35px;
+    border-left: 2px inset $white;
+    line-height: 1.35;
+    padding: 0.75rem;
+    position: relative;
+    z-index: 1;
+    h3 {
+        font-weight: bold;
+        color: $white;
+    }
+    @include viewport("desktop") {
+        // width: 75%;
+    }
+}
+
+.post-card__divisor {
+    border: none;
+    border-top: 3px double $secondary;
+    color: $secondary;
+    height: 5px;
+    margin: 0.55rem 0;
+    overflow: visible;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    &:after {
+        content: "§";
+        padding: 0 4px;
+        position: relative;
+        top: -8px;
+    }
+}
+
+.post-card__preview {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-card__button {
+    all: unset;
+    background-color: $primary;
+    cursor: pointer;
+    color: $white;
+    font-size: 0.8rem;
+    font-weight: 900;
+    height: 25px;
+    margin-bottom: 12px;
+    padding: 0.55rem;
+    position: relative;
+    text-align: center;
+    width: 90%;
+    z-index: 2;
+    &::after {
+        background-color: #fefefe;
+        bottom: -10px;
+        box-shadow: $shadow;
+        content: "READ MORE ...";
+        color: $primary;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        height: 45px;
+        left: -5px;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+    @include viewport("laptop") {
+        align-self: flex-end;
+        transition: all 0.35s ease-in-out;
+        width: 155px;
+        &:hover {
+            background-color: $white;
+            &::after {
+                background-color: $primary;
+                color: $white;
+            }
+        }
+    }
+}
+
+.post-card__metadata {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: $secondary;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    .post-card__metadata__author {
+        margin-bottom: 4px;
+    }
+    .post-card__metadata__date,
+    .post-card__metadata__author {
+        em {
+            color: $primary;
+            font-weight: 900;
+        }
+    }
+}
