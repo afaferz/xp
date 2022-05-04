@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { RouteRecordRaw } from "vue-router";
-import NotFound from '../views/NotFound.vue'
+import NotFoundPage from '../views/NotFoundPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -16,7 +16,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("../views/Post.vue"),
         sensitive: true,
     },
-    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFoundPage },
 ];
 
 const router = createRouter({
