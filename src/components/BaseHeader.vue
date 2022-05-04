@@ -1,35 +1,44 @@
 <template>
     <header class="main-header" :class="{ 'bg--black': !isHome }" ref="header">
         <div class="main-header__logo">
-            <img src="../common/img/xp-logo-clean.png" alt="XP Logo" />
+            <img
+                v-if="isHome"
+                src="../common/img/xp-logo-clean-black.png"
+                alt="XP Logo"
+            />
+            <img
+                v-else
+                src="../common/img/xp-logo-clean-white.png"
+                alt="XP Logo"
+            />
         </div>
         <h1>A Blog</h1>
     </header>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
-import { useRoute } from 'vue-router';
-import { debounce } from '../common/helpers/debounce';
+import { defineComponent, onMounted, ref } from "vue";
+import { useRoute } from "vue-router";
+import { debounce } from "../common/helpers/debounce";
 
 export default defineComponent({
-    name: 'BaseHeader',
+    name: "BaseHeader",
     setup(_props) {
         const route = useRoute();
         const header = ref(null);
-        const isHome = route.path === '/';
+        const isHome = route.path === "/";
 
         const shrinkHeader = () => {
             const scrollY = 50;
             if (!header.value) return;
             if (scrollY < window.scrollY) {
-                header.value.classList.add('shrink');
+                header.value.classList.add("shrink");
             } else {
-                header.value.classList.remove('shrink');
+                header.value.classList.remove("shrink");
             }
         };
         onMounted(() => {
-            window.addEventListener('scroll', debounce(shrinkHeader, 500));
+            window.addEventListener("scroll", debounce(shrinkHeader, 500));
         });
 
         return {
@@ -41,7 +50,7 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import '../common/styles/_variables.scss';
+@import "../common/styles/_variables.scss";
 .main-header {
     height: 90px;
     display: flex;
