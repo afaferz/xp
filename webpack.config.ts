@@ -10,7 +10,7 @@ const isDev = process.env.NODE !== 'production'
 
 
 
-export default function (_env, argv: { mode: string }) {
+export default function (_env: string, argv: { mode: string }) {
     const mode = argv.mode || 'development'
 
     const config: webpack.Configuration = {
