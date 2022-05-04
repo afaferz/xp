@@ -16,7 +16,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("../views/Post.vue"),
         sensitive: true,
     },
-    // { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ];
 
 const router = createRouter({
