@@ -10,6 +10,10 @@
  - Vue Utils - v2.0.0-rc.18 (para Vue 3)
  
 #### Comandos de aplicação
+
+Para instalar as dependências
+
+    npm install
 Para rodar o servidor local
 
     npm start
