@@ -15,9 +15,7 @@ describe('Test component NotFound', () => {
 
         wrapper = mount(NotFound, {
             global: {
-                stubs: {
-                    RouterLink: RouterLinkStub
-                },
+                stubs: ['router-link'],
                 plugins: [router]
             }
         })

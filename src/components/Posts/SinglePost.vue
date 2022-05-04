@@ -32,26 +32,26 @@ import {
     onUpdated,
     reactive,
     toRefs,
-} from 'vue';
-import { useRoute } from 'vue-router';
-import { useStore } from 'vuex';
-import { IPostWithAuthorName } from '../../store/modules/posts/interfaces';
+} from "vue";
+import { useRoute } from "vue-router";
+import { useStore } from "vuex";
+import { IPostWithAuthorName } from "../../store/modules/posts/interfaces";
 
 export default defineComponent({
-    name: 'SinglePost',
-    async setup() {
+    name: "SinglePost",
+    setup() {
         const route = useRoute();
         const store = useStore();
         const postname = route.params.postname;
 
         const postList = computed<IPostWithAuthorName[]>(() =>
-            store.getters['posts/GET_POSTS'](false)
+            store.getters["posts/GET_POSTS"](false)
         );
 
         const singlePost = reactive<IPostWithAuthorName>({
-            title: '',
-            author_name: '',
-            body: '',
+            title: "",
+            author_name: "",
+            body: "",
             metadata: {
                 publishedAt: 0,
                 authorId: null,
@@ -64,30 +64,32 @@ export default defineComponent({
                 // Ensures there will be posts when the page reloads
                 try {
                     const storeCalls = [
-                        store.dispatch('posts/GET_AUTHORS'),
-                        store.dispatch('posts/GET_POSTS'),
+                        store.dispatch("posts/GET_AUTHORS"),
+                        store.dispatch("posts/GET_POSTS"),
                     ];
                     await Promise.all(storeCalls);
                 } catch (error) {
                     console.log(error);
                 }
             }
-        });
-        const post = postList.value.find(({ title }: IPostWithAuthorName) => {
-            const postTitleNormalizated = title
-                .toLowerCase()
-                .replace(/[^A-Z0-9]/gi, '-');
+            const post = postList.value.find(
+                ({ title }: IPostWithAuthorName) => {
+                    const postTitleNormalizated = title
+                        .toLowerCase()
+                        .replace(/[^A-Z0-9]/gi, "-");
 
-            return postname === postTitleNormalizated;
-        });
+                    return postname === postTitleNormalizated;
+                }
+            );
 
-        // Prevent error if post is undefined
-        if (post) {
-            singlePost.title = post.title;
-            singlePost.author_name = post.author_name;
-            singlePost.body = post.body;
-            singlePost.metadata = post.metadata;
-        }
+            // Prevent error if post is undefined
+            if (post) {
+                singlePost.title = post.title;
+                singlePost.author_name = post.author_name;
+                singlePost.body = post.body;
+                singlePost.metadata = post.metadata;
+            }
+        });
 
         return {
             ...toRefs(singlePost),
@@ -97,5 +99,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import './SinglePost.module.scss';
+@import "./SinglePost.module.scss";
 </style>

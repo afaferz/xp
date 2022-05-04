@@ -33,6 +33,7 @@ describe('Test component PostCard', () => {
         wrapper = mount(PostCard, {
             global: {
                 plugins: [router],
+                stubs: ['router-link']
             }
         })
     });
