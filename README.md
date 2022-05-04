@@ -19,6 +19,8 @@ Para rodar o servidor local
    Para rodar o build do projeto
 
     npm run build
+
+Caso queira visualizar a página na web click [aqui](https://xp-drab.vercel.app/)
    
    Por padrão o servidor rodará na porta **3000** mas caso queira rodar em outra porta altere o valor no campo `devServer` em `webpack.config.ts`
    

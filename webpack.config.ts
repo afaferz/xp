@@ -60,10 +60,10 @@ export default function (_env: string, argv: { mode: string }) {
                     exclude: /node_modules/,
                 },
                 {
-                    test: /\.(png|jpe?g|gif)$/i,
+                    test: /\.(jpe?g|png|gif|ico)$/i,
                     use: [
                         {
-                            loader: 'file-loader',
+                            loader: 'file-loader?name=[name].[ext]'
                         },
                     ]
                 },
@@ -88,6 +88,7 @@ export default function (_env: string, argv: { mode: string }) {
             /* config.plugin('html') */
             new HtmlWebpackPlugin({
                 title: 'XP Blog',
+                favicon: path.resolve(__dirname, 'public', 'favicon.ico'),
                 template: path.resolve(__dirname, 'public', 'index.html'),
             }),
         ],
