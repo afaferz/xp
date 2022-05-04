@@ -72,7 +72,7 @@ export default function (env: any, argv: any) {
         output: {
             path: path.resolve(__dirname, './dist'),
             filename: '[name].js',
-            publicPath:JSON.stringify(mode) === 'production' ? '/xp' : '/xp',
+            publicPath:JSON.stringify(mode) === 'production' ? '/xp' : '/',
             chunkFilename: '[id].[chunkhash].js'
         },
         plugins: [
@@ -81,7 +81,7 @@ export default function (env: any, argv: any) {
             /* Definições de loader */
             new webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify(mode),
-                BASE_URL: JSON.stringify(mode) === 'production' ? "'/xp'" : "'/xp'",
+                BASE_URL: JSON.stringify(mode) === 'production' ? "'/xp'" : "'/'",
                 __VUE_OPTIONS_API__: true,
                 __VUE_PROD_DEVTOOLS__: true,
             }),
