@@ -10,7 +10,7 @@ const isDev = process.env.NODE !== 'production'
 
 
 
-export default function (env: any, argv: any) {
+export default function (_env, argv: { mode: string }) {
     const mode = argv.mode || 'development'
 
     const config: webpack.Configuration = {
@@ -115,22 +115,3 @@ export default function (env: any, argv: any) {
 
     return config
 }
-
-// if (process.env.NODE_ENV === 'production') {
-//     config.plugins = (config.plugins || []).concat([
-//         new webpack.DefinePlugin({
-//             'process.env.NODE_ENV': JSON.stringify('production'),
-//         }),
-//         // new webpack.optimize.UglifyJsPlugin({
-//         //     sourceMap: true,
-//         //     compress: {
-//         //         warnings: false,
-//         //     },
-//         // }),
-//         new webpack.LoaderOptionsPlugin({
-//             minimize: true,
-//         }),
-//     ]);
-// }
-
-// export default config;
