@@ -36,7 +36,7 @@
                         <PostCard :post="post" :data-index="index" />
                     </li>
                     <li
-                        v-show="postList.length === 0"
+                        v-if="postList.length === 0"
                         class="post-list__no-result"
                         :key="postList.length + 1"
                     >
