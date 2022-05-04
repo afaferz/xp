@@ -72,7 +72,7 @@ export default function (env: any, argv: any) {
         output: {
             path: path.resolve(__dirname, './dist'),
             filename: '[name].js',
-            publicPath: process.env.NODE_ENV === 'production' ? '/xp' : '/',
+            publicPath:JSON.stringify(mode) === 'production' ? '/xp' : '/xp',
             chunkFilename: '[id].[chunkhash].js'
         },
         plugins: [
