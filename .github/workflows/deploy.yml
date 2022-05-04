@@ -2,7 +2,7 @@ name: Deploy To Github Pages
 on:
   push:
     branches:
-      - main
+      - gh-pages
 jobs:
   deploy:
     runs-on: ubuntu-latest
