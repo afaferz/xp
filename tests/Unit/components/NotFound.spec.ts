@@ -1,8 +1,8 @@
 import { mount, RouterLinkStub, VueWrapper } from '@vue/test-utils'
-import { createRouter, createWebHistory } from 'vue-router'
-import { routes } from "../../../src/router/router"
+import { createRouter, createWebHistory, RouterView } from 'vue-router'
+import { routes } from "@/router/router"
 
-import NotFound from '../../../src/components/Custom/NotFound.vue'
+import NotFound from '@/components/Custom/NotFound.vue'
 const router = createRouter({
     history: createWebHistory(),
     routes: routes,
@@ -15,7 +15,6 @@ describe('Test component NotFound', () => {
 
         wrapper = mount(NotFound, {
             global: {
-                stubs: ['router-link'],
                 plugins: [router]
             }
         })

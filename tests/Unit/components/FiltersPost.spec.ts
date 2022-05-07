@@ -1,6 +1,6 @@
 import { flushPromises, mount, VueWrapper } from '@vue/test-utils'
 import { createStore } from 'vuex'
-import FiltersPost from '../../../src/components/Posts/Filters/FiltersPost.vue'
+import FiltersPost from '@/components/Posts/Filters/FiltersPost.vue'
 import { postModuleWithData } from '../../__mocks__/store/post-module'
 
 const storePost = createStore({

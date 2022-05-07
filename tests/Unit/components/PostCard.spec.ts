@@ -1,8 +1,8 @@
 import { mount, flushPromises, VueWrapper, config } from '@vue/test-utils'
 import { createRouter, createWebHistory, Router } from 'vue-router'
-import { routes } from "../../../src/router/router"
+import { routes } from "@/router/router"
 import { formatDate as formatDateMock } from '../../__mocks__/helpers/filters'
-import PostCard from '../../../src/components/Posts/PostCard/PostCard.vue'
+import PostCard from '@/components/Posts/PostCard/PostCard.vue'
 
 config.global.mocks = {
     $filters: {
@@ -32,8 +32,7 @@ describe('Test component PostCard', () => {
 
         wrapper = mount(PostCard, {
             global: {
-                plugins: [router],
-                stubs: ['router-link']
+                plugins: [router]
             }
         })
     });

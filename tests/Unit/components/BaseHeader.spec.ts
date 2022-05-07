@@ -1,8 +1,8 @@
-import { mount } from '@vue/test-utils'
-import BaseHeader from '../../../src/components/BaseHeader.vue'
-import { routes } from '../../../src/router/router'
+import { mount, RouterLinkStub } from '@vue/test-utils'
+import BaseHeader from '@/components/BaseHeader.vue'
+import { routes } from '@/router/router'
 import { createRouter, createWebHistory } from 'vue-router'
-import { debounce } from '../../../src/common/helpers/debounce'
+import { debounce } from '@/common/helpers/debounce'
 import { nextTick } from 'vue'
 
 const router = createRouter({
@@ -13,7 +13,10 @@ jest.useFakeTimers()
 describe('Test BaseHeader component', () => {
     const wrapper = mount(BaseHeader, {
         global: {
-            plugins: [router]
+            plugins: [router],
+            stubs: {
+                RouterLink: RouterLinkStub
+            }
         }
     })
 

@@ -35,7 +35,7 @@ import {
 } from "vue";
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
-import { IPostWithAuthorName } from "../../store/modules/posts/interfaces";
+import { IPostWithAuthorName } from "@/store/modules/posts/interfaces";
 
 export default defineComponent({
     name: "SinglePost",

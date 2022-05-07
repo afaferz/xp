@@ -1,12 +1,8 @@
 import { mount } from '@vue/test-utils'
-import App from '../../../src/App.vue'
+import App from '@/App.vue'
 
 
-const wrapper = mount(App, {
-    global: {
-        stubs: ['router-view']
-    }
-})
+const wrapper = mount(App)
 
 describe('Testing app', () => {
     it('Render', async () => {

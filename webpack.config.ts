@@ -8,8 +8,6 @@ import 'webpack-dev-server';
 
 const isDev = process.env.NODE !== 'production'
 
-
-
 export default function (_env: string, argv: { mode: string }) {
     const mode = argv.mode || 'development'
 
@@ -28,7 +26,7 @@ export default function (_env: string, argv: { mode: string }) {
                     options: {
                         appendTsSuffixTo: [/\.vue$/],
                         appendTsxSuffixTo: [/\.vue$/],
-                        ignoreDiagnostics: [7031, 2345]
+                        ignoreDiagnostics: [7031, 2345] // Ignorar erros de componente condicional (ainda não solucionado)
                     }
                 },
                 /* Loader do Vue */
@@ -94,7 +92,7 @@ export default function (_env: string, argv: { mode: string }) {
         ],
         resolve: {
             alias: {
-                '@': '/home/afaferz/dev/vue3/src',
+                '@': '/home/afaferz/dev/xp/src',
                 vue$: 'vue/dist/vue.runtime.esm-bundler.js',
             },
 

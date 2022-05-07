@@ -1,11 +1,9 @@
 import { mount, flushPromises, VueWrapper, config } from '@vue/test-utils'
-import { createRouter, createWebHistory, Router } from 'vue-router'
-import { routes } from "../../../src/router/router"
 import { formatDate as formatDateMock } from '../../__mocks__/helpers/filters'
 import { postModuleWithData } from '../../__mocks__/store/post-module'
 import { postModuleWithoutData } from '../../__mocks__/store/post-module'
 import { createStore } from 'vuex'
-import SinglePost from '../../../src/components/Posts/SinglePost.vue'
+import SinglePost from '@/components/Posts/SinglePost.vue'
 import { useRouter, useRoute } from 'vue-router'
 
 jest.mock('vue-router', () => ({

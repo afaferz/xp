@@ -26,7 +26,7 @@
 <script lang="ts">
 import { computed, defineComponent, ref, WritableComputedRef } from 'vue';
 import { useStore } from 'vuex';
-import SelectInput from '../../Custom/SelectInput.vue';
+import SelectInput from '@/components/Custom/SelectInput.vue';
 
 export default defineComponent({
     name: 'FiltersPosts',

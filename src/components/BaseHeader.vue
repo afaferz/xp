@@ -19,7 +19,7 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
-import { debounce } from "../common/helpers/debounce";
+import { debounce } from "@/common/helpers/debounce";
 
 export default defineComponent({
     name: "BaseHeader",
@@ -50,7 +50,7 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "../common/styles/_variables.scss";
+@import "@/common/styles/_variables.scss";
 .main-header {
     height: 90px;
     display: flex;

@@ -1,6 +1,6 @@
 import { mount, VueWrapper } from '@vue/test-utils'
 import { createStore } from 'vuex'
-import PostList from '../../../src/components/Posts/PostList.vue'
+import PostList from '@/components/Posts/PostList.vue'
 import { postModuleWithData } from '../../__mocks__/store/post-module'
 import { postModuleWithoutData } from '../../__mocks__/store/post-module'
 import gsap from 'gsap'

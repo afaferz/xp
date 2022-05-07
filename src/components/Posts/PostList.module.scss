@@ -1,5 +1,5 @@
-@import "../../common/styles/_variables.scss";
-@import "../../common/styles/breakpoints.scss";
+@import "@/common/styles/_variables.scss";
+@import "@/common/styles/breakpoints.scss";
 @mixin display-flex-col() {
     display: flex;
     flex-direction: column;

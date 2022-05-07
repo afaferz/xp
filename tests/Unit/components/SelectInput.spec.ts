@@ -1,5 +1,5 @@
 import { DOMWrapper, mount, VueWrapper } from '@vue/test-utils'
-import SelectInput from '../../../src/components/Custom/SelectInput.vue'
+import SelectInput from '@/components/Custom/SelectInput.vue'
 
 describe('Testing SelecInput Component', () => {
     let wrapper: VueWrapper<any>;

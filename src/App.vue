@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import PageLoader from '../src/components/Custom/PageLoader/PageLoader.vue';
+import PageLoader from '@/components/Custom/PageLoader/PageLoader.vue';
 import { defineComponent } from 'vue';
 
 // Check if page document is ready

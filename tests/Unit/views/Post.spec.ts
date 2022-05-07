@@ -2,10 +2,10 @@ import { config, flushPromises, mount, VueWrapper } from '@vue/test-utils'
 import { createStore } from 'vuex'
 import { postModuleWithData } from '../../__mocks__/store/post-module'
 import { formatDate as formatDateMock } from '../../__mocks__/helpers/filters'
-import { createRouter, createWebHistory, Router } from 'vue-router'
-import { routes } from "../../../src/router/router"
+import { createRouter, createWebHistory, Router, RouterView } from 'vue-router'
+import { routes } from "@/router/router"
 import { defineComponent, nextTick } from 'vue'
-import Post from '../../../src/views/Post.vue'
+import Post from '@/views/Post.vue'
 
 
 const storePost = createStore({
@@ -39,10 +39,7 @@ describe('Testing page Post', () => {
         await router.isReady()
         wrapper = mount(App, {
             global: {
-                plugins: [storePost, router],
-                stubs: {
-                    SinglePost: true
-                }
+                plugins: [storePost, router]
             },
         })
         await flushPromises()

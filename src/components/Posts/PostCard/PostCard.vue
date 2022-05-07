@@ -32,7 +32,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import { useRouter } from 'vue-router';
-import { IPost } from '../../../store/modules/posts/interfaces';
+import { IPost } from '@/store/modules/posts/interfaces';
 
 export default defineComponent({
     name: 'PostCard',
