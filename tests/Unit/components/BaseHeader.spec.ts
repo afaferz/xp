@@ -13,10 +13,7 @@ jest.useFakeTimers()
 describe('Test BaseHeader component', () => {
     const wrapper = mount(BaseHeader, {
         global: {
-            plugins: [router],
-            stubs: {
-                RouterLink: RouterLinkStub
-            }
+            plugins: [router]
         }
     })
 

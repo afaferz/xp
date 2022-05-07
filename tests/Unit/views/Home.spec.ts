@@ -1,10 +1,10 @@
-import { config, mount, RouterLinkStub, VueWrapper } from '@vue/test-utils'
+import { config, mount, VueWrapper } from '@vue/test-utils'
 import { createStore } from 'vuex'
 import { postModuleWithData } from '../../__mocks__/store/post-module'
 import { formatDate as formatDateMock } from '../../__mocks__/helpers/filters'
-import { createRouter, createWebHistory, Router, RouterView } from 'vue-router'
+import { createRouter, createWebHistory, Router } from 'vue-router'
 import { routes } from "@/router/router"
-import { defineComponent, nextTick } from 'vue'
+import { defineComponent } from 'vue'
 import Home from '@/views/Home.vue'
 
 
